@@ -1,19 +1,22 @@
-const User = require('../models/User')
+const Admin = require('../models/Admin')
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-exports.userSignUp = async(req, res)=>{
+
+
+
+exports.AdminSignUp = async(req, res)=>{
 
     try{
-        const user = await User.findOne({email: req.body.email})
-        console.log(user)
-        if (user) {
+        const admin = await Admin.findOne({email: req.body.email})
+        console.log(admin)
+        if (admin) {
             return res
               .status(400)
-              .json({ message: "user already exist,please try signin" });
+              .json({ message: "admin already exist,please try signin" });
           } else {
-            const newUser = await User.create(req.body);
+            const newAdmin = await Admin.create(req.body);
             // console.log(newUser)
-            res.status(200).json({ message: "users added successfully" });
+            res.status(200).json({ message: "admin added successfully" });
           }
 
 
@@ -27,26 +30,27 @@ exports.userSignUp = async(req, res)=>{
 
 
 
-exports.userSignIn = async(req, res)=>{
-    try{    
-        const user = await User.findOne({email: req.body.email})
-        console.log(user);
 
-        if(!user){
+exports.AdminSignIn = async(req, res)=>{
+    try{    
+        const admin = await Admin.findOne({email: req.body.email})
+        console.log(admin);
+
+        if(!admin){
             return res.status(400).json({message: "please signup first"})
         }
-        const isPasswordMatching = bcrypt.compareSync(req.body.password, user.password)
+        const isPasswordMatching = bcrypt.compareSync(req.body.password, admin.password)
         if(!isPasswordMatching){
             return res.status(400).json({message: "incorrect password"})
         }
 
-        const { _id, email, firstname} = user
+        const { _id, email, firstname} = admin
 
         var token = jwt.sign({ _id, email, firstname }, req.app.get('secret-key'), {
           expiresIn: "2hr",
         });
         // console.log(token)
-        return res.status(200).json({token, token, message : "signin successfully"})
+        return res.status(200).json({token, token, message : "Admin signin successfully"})
 
     }catch(err){
         console.log(err);
