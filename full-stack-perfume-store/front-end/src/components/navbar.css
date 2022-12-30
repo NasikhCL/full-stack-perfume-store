@@ -1,0 +1,89 @@
+.navbar{
+    width: 100%;
+    height: 70px;
+    padding: 0 20px;
+    background-color: aliceblue;
+    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.navbar .logo-img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.navbar .right ul li{
+list-style: none;
+display: inline-block;
+margin: 0 20px;
+}
+.navbar .left{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    width: 35%;
+}
+.navbar .right{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 65%;
+}
+.navbar .right .r1{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: center;
+    /* width: 50%; */
+}
+.navbar .right .r2{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    /* width: 50%; */
+}
+.user-profile{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    /* margin-right: 20px; */
+}
+.navbar .hamberger{
+    display: none;
+}
+
+@media screen and (max-width:768px) {
+    .navbar .left{
+        width:70%;
+    }
+    .navbar .right{
+        display: none;
+    }
+    .navbar .hamberger{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+        align-items: center;
+        width: 30%;
+    }
+    .hamberger-list{
+        list-style: none;
+        padding: 10px 10px;
+        position: absolute;
+        right:0;
+        top:0;
+        background-color: grey;
+    }
+    .hamberger-list li{
+        padding: 10px 0;
+    }
+    .hamberger-list .hamberger-close{
+        margin-right: 70px;
+
+    }
+}
