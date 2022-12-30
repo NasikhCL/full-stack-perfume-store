@@ -1,10 +1,15 @@
 const express =require('express');
-const { AdminSignUp, AdminSignIn } = require('../controllers/AdminController');
+const { validateJwt } = require('../middlewares/jwt');
+const { AdminSignUp, AdminSignIn } = require('../controllers/adminController');
+const { getProducts, createProduct } = require('../controllers/productController');
 const router = express.Router();
 
 
 router.post('/signup', AdminSignUp);
 router.post('/signin', AdminSignIn);
+router.post('/create-product', createProduct)
+router.get('/get-products', validateJwt, getProducts );
+
 // router.get('/home', ad)
 
 module.exports = router
