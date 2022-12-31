@@ -27,9 +27,9 @@ return (
         <div className='hamberger'>
             <i className="fa-solid fa-bars" onClick={()=>{setIsHambergerListVisible(true)}}></i>
            {
-            isHambergerListVisible && <ul className='hamberger-list'  onClick={()=>{setIsHambergerListVisible(false)}}>
-                    <li style={{display:"flex"}}>
-                        <i className="fa-solid fa-xmark hamberger-close"></i>
+            isHambergerListVisible && <ul className='hamberger-list'  >
+                    <li style={{display:"flex"}} >
+                        <i className="fa-solid fa-xmark hamberger-close" onClick={()=>{setIsHambergerListVisible(false)}}></i>
                         <img className="user-profile" src="https://images.pexels.com/photos/14391922/pexels-photo-14391922.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="user-profile"/>
                     </li>
                     <li>Home</li>
