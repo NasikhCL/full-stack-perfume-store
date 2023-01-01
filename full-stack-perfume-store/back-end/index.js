@@ -10,8 +10,8 @@ app.use(bodyParser.urlencoded({ extended: false }))
 
 // parse application/json
 app.use(bodyParser.json()) 
-
-
+const cors = require('cors')
+app.use(cors())
 
 app.set('secret-key', 'privateKeyhduqh09321e12312')
 app.use('/', routes)
