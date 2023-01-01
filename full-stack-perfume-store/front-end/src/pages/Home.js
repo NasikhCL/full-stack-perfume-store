@@ -20,6 +20,7 @@ const Home = () => {
   }, []);
 
 
+
   return (
     <div className='home-page'>
       <div className='home-carousel'>

@@ -4,7 +4,10 @@ import Home from './pages/Home';
 import { Route, Routes } from 'react-router-dom';
 import LoginSignUp from './pages/LoginSignUp';
 import Cart from './pages/Cart';
+// import { useSelector } from 'react-redux';
 function App() {
+
+
   return (
     <div className="App">
       <Navbar />
