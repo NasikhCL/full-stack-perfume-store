@@ -40,7 +40,7 @@ return (
                         <NavLink to="/cart">{({ isActive }) => <li className={ isActive ? 'select' : 'not-select' }>Cart <i className="fa-solid fa-cart-shopping"></i></li>}</NavLink> 
                         <NavLink to="/signin-signup/signin" onClick={logOut}>{({ isActive }) => <li className={ isActive ? 'select' : 'not-select' }>LogOut <i className="fa-solid fa-arrow-right-from-bracket"></i></li>}</NavLink> 
                     </>
-                    :<> <NavLink to="/signin-signup/signin">{({ isActive }) => <li className={ isActive ? 'select' : 'not-select' } onClick={()=>{ dispatch(authActions.login())}}>LogIn </li>}</NavLink> 
+                    :<> <NavLink to="/signin-signup/signin">{({ isActive }) => <li className={ isActive ? 'select' : 'not-select' }>LogIn </li>}</NavLink> 
                     <NavLink to="/signin-signup/signup" onClick={()=>{ dispatch(authActions.logout())}}>{({ isActive }) => <li className={ isActive ? 'select' : 'not-select' }>SignUp</li>}</NavLink>
                     </>
             } 

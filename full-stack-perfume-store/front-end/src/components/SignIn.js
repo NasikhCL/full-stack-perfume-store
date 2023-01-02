@@ -9,7 +9,7 @@ const SignIn = () => {
     const navigate = useNavigate()
     // const {formInputs,onInputChange} =useFormHook()
     const [formInputs, setFormInputs] = useState({
-        name:'',
+        email:'',
         password:''
     })
     const onInputChange=(event)=>{ 

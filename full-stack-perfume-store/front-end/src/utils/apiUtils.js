@@ -32,4 +32,21 @@ export const getProducts = async () => {
     }
   }
   
+    
+  export const onSignUp = async(userData)=>{
+    try{
+      console.log(userData)
+      const response = await axios({
+        method: 'POST',
+        url:"http://localhost:8000/user/signup",
+        data: userData
+      })
+      return response
+
+    }catch (err) {
+      return err.response
+    }
+  }
+  
+  
   
