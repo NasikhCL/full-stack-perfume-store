@@ -27,7 +27,8 @@ const userSchema = mongoose.Schema(
         isActive: {
             type: Boolean,
             default: true
-        }
+        },
+        cart:[]
     },{timestamps: true}
 )
 

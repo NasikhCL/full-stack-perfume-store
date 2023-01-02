@@ -8,6 +8,7 @@ const Product = ({product}) => {
     console.log(cartItems);
 
     const addToCart = ()=>{
+        
         dispatch(cartActions.addToCart({
             name: product.name,
             id: product._id,
@@ -27,4 +28,4 @@ const Product = ({product}) => {
   )
 }
 
-export default Product
+export default Product 
