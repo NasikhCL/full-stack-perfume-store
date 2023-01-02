@@ -50,3 +50,17 @@ export const getProducts = async () => {
   
   
   
+  export const onAddToCart = async(product)=>{
+    try{
+      console.log(userData)
+      const response = await axios({
+        method: 'POST',
+        url:"http://localhost:8000/user/signin",
+        data: userData
+      })
+      return response
+
+    }catch (err) {
+      return err.response
+    }
+  }

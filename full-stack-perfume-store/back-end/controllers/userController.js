@@ -57,3 +57,31 @@ exports.userSignIn = async(req, res)=>{
     
 
 }
+
+
+exports.userAddToCart = async(req, res)=>{
+    try{
+        const userId = req.body.userId
+        console.log(userId)
+        const addTocart = await User.findByIdAndUpdate(userId,{
+            $push: {cart: req.body.product}
+        })
+        if (userId ) {
+            return res
+              .status(200)
+              .json({ message: "product added to cart successfully" });
+          } else {
+            // const newUser = await User.create(req.body);
+            // console.log(newUser)
+            res.status(400).json({ message: "couldn't add product to cart" });
+          }
+
+
+
+    }catch(err){
+        console.log('internal server error', err);
+        return res.status(500).json({message: 'internal server error'})
+    }
+    
+
+}
