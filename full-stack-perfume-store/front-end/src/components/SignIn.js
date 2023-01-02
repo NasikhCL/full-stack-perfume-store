@@ -21,7 +21,7 @@ const SignIn = () => {
 
         console.log(apiResponse) 
         if(apiResponse.status === 200){
-            localStorage.setItem("jwt", apiResponse.data.token)
+            localStorage.setItem("access-token", apiResponse.data.token)
             dispatch(authActions.login())
             navigate('/')
         }else{

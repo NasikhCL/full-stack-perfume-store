@@ -52,11 +52,15 @@ export const getProducts = async () => {
   
   export const onAddToCart = async(product)=>{
     try{
-      console.log(userData)
+      console.log(product)
       const response = await axios({
+        headers:{
+          "access-token": localStorage.getItem('access-token')
+        },
         method: 'POST',
-        url:"http://localhost:8000/user/signin",
-        data: userData
+        url:"http://localhost:8000/user/add-to-cart",
+        data: product
+        
       })
       return response
 

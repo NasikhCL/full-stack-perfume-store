@@ -2,18 +2,26 @@ import React from 'react'
 import './product.css'
 import { useDispatch, useSelector} from 'react-redux'
 import { cartActions } from '../store/cart-slice'
+import { onAddToCart } from '../utils/apiUtils'
 const Product = ({product}) => {
     const dispatch = useDispatch();
     const cartItems= useSelector((state)=> state.cart.itemsList);
     console.log(cartItems);
 
-    const addToCart = ()=>{
-        
-        dispatch(cartActions.addToCart({
-            name: product.name,
-            id: product._id,
-            price: product.price
-        }))
+    const addToCart = async()=>{
+        const apiResponse = await onAddToCart({name: product.name,
+          id: product._id,
+          price: product.price})
+          console.log(apiResponse);
+          if(apiResponse.status === 200){
+            dispatch(cartActions.addToCart({
+                name: product.name,
+                id: product._id,
+                price: product.price
+            }))
+          }else{
+            console.log(apiResponse.data.message);
+          }
        
 
     }

@@ -61,20 +61,31 @@ exports.userSignIn = async(req, res)=>{
 
 exports.userAddToCart = async(req, res)=>{
     try{
-        const userId = req.body.userId
-        console.log(userId)
-        const addTocart = await User.findByIdAndUpdate(userId,{
-            $push: {cart: req.body.product}
+        const reqBody = req.body
+        console.log('req is bod : ' , req.body)  
+        
+        const addTocart = await User.findByIdAndUpdate(req.body.userId,{
+            $push: {cart: {
+                        name: req.body.name,
+                        id: req.body.id,
+                        price:req.body.price,
+                        // quantity:req.body.qty
+
+                        }
+                    }
         })
-        if (userId ) {
+        
+        if (req.body.userId && addTocart ) {
+           console.log(addTocart)
+
             return res
               .status(200)
-              .json({ message: "product added to cart successfully" });
+              .json({ user: req.body.userId , message: "product added to cart successfully" ,adT: addTocart});
           } else {
             // const newUser = await User.create(req.body);
             // console.log(newUser)
             res.status(400).json({ message: "couldn't add product to cart" });
-          }
+          } 
 
 
 
