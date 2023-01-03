@@ -1,8 +1,9 @@
-import React,{useState} from 'react';
+import React,{ useState} from 'react';
 import { NavLink, useNavigate } from 'react-router-dom';
 import './navbar.css'
 import { useSelector,useDispatch } from 'react-redux';
 import { authActions } from '../store/auth-slice';
+
 // import {login, logout} from '../store/authActions'
 const Navbar = () => {
     const cartItemsQty = useSelector(state => state.cart.totalQuantity)
@@ -20,7 +21,7 @@ const Navbar = () => {
         dispatch(authActions.logout())
         onSignOut();
     }
-    
+   
         
     const [isHambergerListVisible, setIsHambergerListVisible] = useState(false)
     // onClick={()=> ( dispatch(login()))} 

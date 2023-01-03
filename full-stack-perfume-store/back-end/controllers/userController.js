@@ -96,3 +96,45 @@ exports.userAddToCart = async(req, res)=>{
     
 
 }
+exports.userCart = async(req, res)=>{
+    try{
+        const userId = req.body.userId
+        const cartItems = await User.findById(userId).select('cart');
+        if(cartItems){
+            return res
+            .status(200)
+            .json({ message: "retrived cart successfully",cart: cartItems});
+        }
+
+
+
+
+    }catch(err){
+        console.log('internal server error', err);
+        return res.status(500).json({message: 'internal server error'})
+    }
+}
+
+// exports.verify = async(req, res)=>{
+//     try{
+    
+//         const token = req.headers['access-token'];
+//         if(!token){
+//             return res.status(400).json({message: "JWT access token not found"})
+//         }
+//         jwt.verify(token, req.app.get('secret-key'), function(err, decodedData){
+//             if(err){
+//                 console.log(err);
+//                 return res.status(400).json({message: err.message,  isVerified: false})
+//             }
+//             return res.json({message: 'token verified', isVerified: true})
+//             // req.body.userId = decodedData._id
+//         })
+//     }catch(err){
+//         console.log('internal server error', err);
+//         return res.status(500).json({message: 'internal server error'})
+//     }
+
+
+
+// }

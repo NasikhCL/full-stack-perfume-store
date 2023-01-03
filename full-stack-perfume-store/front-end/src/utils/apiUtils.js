@@ -68,3 +68,38 @@ export const getProducts = async () => {
       return err.response
     }
   }
+  export const onUserCart= async()=>{
+    try{
+      // console.log(product)
+      const response = await axios({
+        headers:{
+          "access-token": localStorage.getItem('access-token')
+        },
+        method: 'GET',
+        url:"http://localhost:8000/user/cart"
+        
+      })
+      return response
+
+    }catch (err) {
+      return err.response
+    }
+  } 
+  // export const verifyJwt = async(jwt)=>{
+  //   try{
+     
+  //     const response = await axios({
+  //       headers:{
+  //         "access-token": jwt 
+  //       },
+  //       method: 'get',
+  //       url:"http://localhost:8000/user/verify"
+        
+  //     })
+  //     return response
+
+  //   }catch (err) {
+  //     return err.response
+  //   }
+
+  // }
