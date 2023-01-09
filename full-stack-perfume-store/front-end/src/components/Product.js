@@ -14,6 +14,7 @@ const Product = ({product}) => {
             name: product.name,
             id: product._id,
             price: product.price,
+            imageUrl: product.imageUrl,
             quantity: 1
           })
           console.log(apiResponse);
@@ -22,8 +23,10 @@ const Product = ({product}) => {
                 name: product.name,
                 id: product._id,
                 price: product.price,
+                imageUrl: product.imageUrl,
             }))
           }else{
+            //TODO: add notification (please login first)
             console.log(apiResponse.data.message);
           }
        
