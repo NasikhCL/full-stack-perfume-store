@@ -26,7 +26,7 @@ const Navbar = () => {
     const [isHambergerListVisible, setIsHambergerListVisible] = useState(false)
     // onClick={()=> ( dispatch(login()))} 
 return (
-    <nav className="navbar">
+    <nav className="navbar h-20 w-100">
         <div className='left'>
             <img className="logo-img"  src="https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="logo"/>             
             <h4 className="app-title">Perfume Store</h4>
