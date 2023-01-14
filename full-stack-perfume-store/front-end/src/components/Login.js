@@ -1,5 +1,5 @@
 import React from 'react';
-export default function Signup() {
+export default function Login() {
   const FormField = ({ type, name, placeholder, className }) => {
     return (
       <input
@@ -21,20 +21,6 @@ export default function Signup() {
       <div className="flex flex-col items-center justify-cenetr w-fit h-fit p-4 bg-white shadow-xl rounded-xl">
         {logo}
         <form className="flex flex-col items-center justify-between w-11/12 max-w-[400px] ">
-          <div className="flex flex-col items-center justify-between w-full sm:flex-row">
-            <FormField
-              type="text"
-              name="firstName"
-              placeholder="first name"
-              className="w-full ml-3 sm:w-1/2 sm:ml-0"
-            />
-            <FormField
-              type="text"
-              name="firstName"
-              placeholder="last name"
-              className="w-full mr-3 sm:w-1/2 sm:mr-0"
-            />
-          </div>
           <FormField
             type="email"
             name="email"
@@ -47,12 +33,7 @@ export default function Signup() {
             placeholder="password"
             className="w-full"
           />
-          <FormField
-            type="tel"
-            name="phone-number"
-            placeholder="Phone Number"
-            className="w-full"
-          />
+          
           <button className='py-2 px-5 bg-gray-200 border rounded-lg hover:bg-gray-600'>SignUp</button>
         </form>
       </div>
