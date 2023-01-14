@@ -2,7 +2,7 @@ import React from 'react'
 
 export const Navbar = () => {
   return (
-    <div className='w-100 h-14 bg-gray-200 text-gray-900 color flex items-center justify-between'>
+    <div className='w-100 h-14 mb-4 bg-gray-200 text-gray-900 color flex items-center justify-between'>
         <div className='flex items-center border'>
             <img className="w-10 h-10 rounded-full mx-2"  src="https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="logo"/>             
             <h4 className="font-bold">Perfume Store</h4>

@@ -13,13 +13,16 @@ export default function Signup() {
   };
 
   const logo = (
-    <img className="w-20 h-20 rounded-full mx-2"  src="https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="logo"/>  
+    <img className="w-10 h-10 rounded-full mx-2"  src="https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="logo"/>  
   );
 
   return (
     <>
-      <div className="flex flex-col items-center justify-cenetr w-fit h-fit p-4 bg-white shadow-xl rounded-xl">
-        {logo}
+      <div className="flex flex-col items-center justify-center w-fit h-fit p-4 bg-white shadow-xl rounded-xl">
+        <div className='flex items-center flex-col'>
+            <img className="w-10 h-10 rounded-full"  src="https://images.pexels.com/photos/170809/pexels-photo-170809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="logo"/>
+            <span className='text-xl p-3'>SignUp</span>
+        </div>
         <form className="flex flex-col items-center justify-between w-11/12 max-w-[400px] ">
           <div className="flex flex-col items-center justify-between w-full sm:flex-row">
             <FormField
