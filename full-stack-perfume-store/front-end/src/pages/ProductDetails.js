@@ -2,7 +2,7 @@ import React from 'react'
 
 export default function ProductDetails() {
   return (
-    <div className='flex flex-wrap w-100'>
+    <div className='flex flex-wrap h-full w-100'>
         <div className='w-6/12 h-96 p-5'>
             <img className='w-full h-full rounded-t-md object-cover' src='https://images.pexels.com/photos/3059609/pexels-photo-3059609.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1' alt='product' />
         </div>
